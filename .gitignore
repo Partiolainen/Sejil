@@ -20,3 +20,4 @@ lcov.info
 
 ignore/
 *.user
+/src/Sejil.Client/package-lock.json

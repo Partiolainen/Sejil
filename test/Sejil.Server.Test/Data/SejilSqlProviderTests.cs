@@ -428,7 +428,7 @@ ORDER BY l.timestamp DESC, p.name", sql);
             };
             yield return new object[]
             {
-                "(prob1 = 'value1' or prob1 = 'value2') or (prob3 like '%value3' and prob4 != 55.55)",
+                "(prob1 = 'value1' or prob1 = 'value2') or (prob3 like '%value3' and prob4 != '55.55')",
                 "id IN (SELECT logId FROM log_property GROUP BY logId HAVING " +
                 "(SUM(name = 'prob1' AND value = 'value1') > 0 " +
                 "OR SUM(name = 'prob1' AND value = 'value2') > 0) " +

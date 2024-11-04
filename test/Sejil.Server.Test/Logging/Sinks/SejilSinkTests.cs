@@ -208,9 +208,9 @@ namespace Sejil.Test.Logging.Sinks
             // Hello, {name}. Your # is {number}
             var tokens = new List<MessageTemplateToken>
             {
-                new TextToken("Hello, ", 0),
+                new TextToken("Hello, "/*, 0*/),
                 new PropertyToken("name", "{name}"),
-                new TextToken(". Your # is ", 13),
+                new TextToken(". Your # is "/*, 13*/),
                 new PropertyToken("number", "{number}"),
             };
 

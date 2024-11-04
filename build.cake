@@ -59,7 +59,10 @@ Task("ClientBuild")
     if (target.ToUpper() == "COVER") { return; }
 
 	//./src/Sejil.Client/> npm install
-    NpmInstall(settings => settings.FromPath(clientDir));
+    NpmInstall(new NpmInstallSettings {
+        WorkingDirectory = clientDir,
+        ArgumentCustomization = args => args.Append("--legacy-peer-deps")
+    });
 	//./src/Sejil.Client/> npm run build
     NpmRunScript("build", settings => settings.FromPath(clientDir));
 });
